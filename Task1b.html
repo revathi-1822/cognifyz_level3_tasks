@@ -1,0 +1,41 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Image Transition</title>
+  <style>
+    body{
+      background-color: rgb(223, 143, 22);
+    }
+    .Slides{
+      box-shadow: 10px 10px 10px;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+  <center><h1><marquee>Image Slideshow Transition</marquee></h1>
+  <div class="container">
+    <img class="Slides" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQF_LvCUHGuPcRENnlPapn7VzF65yYFL2aYww&usqp=CAU" style="width: 30%; height: 80%;">
+    <img class="Slides" src="https://i.pinimg.com/550x/66/24/97/66249779aeed22f0e58ae33cd9d41c82.jpg">
+    <img class="Slides" src="https://i.pinimg.com/236x/1b/0d/17/1b0d1734d728775cd365e92df4c52e4e.jpg" style="height: 80%; width: 30%;">
+  </div>
+</center>
+  <script>
+    var index=0;
+    carousel();
+    function carousel(){
+      var i;
+      var x=document.getElementsByClassName("Slides");
+      for(i=0;i<x.length;i++)
+      {
+        x[i].style.display="none";
+      }
+      index++;
+      if(index>x.length){index=1}
+      x[index-1].style.display="block";
+      setTimeout(carousel,2000);
+    }
+  </script>
+</body>
+</html>
